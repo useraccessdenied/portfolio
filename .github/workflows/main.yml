@@ -5,14 +5,20 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  web-deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      - name: Fetch Code
+        uses: actions/checkout@v2
         with:
-          ftp_host: ${{ secrets.FTP_HOST }}
-          ftp_username: ${{ secrets.FTP_USERNAME }}
-          ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: "."
-          dist_target_dir: "/htdocs"
-          delete: "true"
+          fetch-depth: 2
+
+      - name: Sync Files
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: "htdocs/"
+          state-name: "htdocs/.sync-state.json"
