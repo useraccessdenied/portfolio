@@ -13,6 +13,6 @@ jobs:
           ftp_host: ${{ secrets.FTP_HOST }}
           ftp_username: ${{ secrets.FTP_USERNAME }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: ""
-          dist_target_dir: "htdocs"
+          local_source_dir: "."
+          dist_target_dir: "/htdocs"
           delete: "true"
