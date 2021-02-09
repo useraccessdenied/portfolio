@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Works",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss-cli build ./css/base.css -o index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/useraccessdenied/portfolio.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Resume"
+  ],
+  "author": "Kapil Singaria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/useraccessdenied/portfolio/issues"
+  },
+  "homepage": "https://github.com/useraccessdenied/portfolio#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
+  }
+}
