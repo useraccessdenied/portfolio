@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss-cli build ./css/base.css -o index.css"
+    "build": "tailwindcss-cli build ./css/base.css -o index.css",
+    "min": "postcss index.css > index-min.css"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   "homepage": "https://github.com/useraccessdenied/portfolio#readme",
   "dependencies": {
     "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.3"
-  }
+  },
+  "devDependencies": {}
 }
